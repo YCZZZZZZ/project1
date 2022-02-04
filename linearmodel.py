@@ -1,4 +1,4 @@
-
+import numpy as np
 
 def linearmodel(w,xTe):
 # INPUT:
@@ -10,5 +10,5 @@ def linearmodel(w,xTe):
 # preds predictions
 
     # YOUR CODE HERE
-
+    preds = np.dot(w.T, xTe)
     return preds

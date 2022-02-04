@@ -14,4 +14,21 @@ def grdescent(func,w0,stepsize,maxiter,tolerance=1e-02):
 
     # YOUR CODE HERE
 
+    w = w0
+    loss = 100000
+    for k in range(maxiter):
+        lossold = loss
+        loss, gradient = func(w)
+        dk = -1 * gradient
+        if np.linalg.norm(dk) < tolerance:
+            break
+        else:
+            pass
+        w = w + stepsize * dk
+
+        if loss < lossold:
+            stepsize = 1.01 * stepsize
+        else:
+            stepsize = 0.5 * stepsize
+
     return w

@@ -17,5 +17,7 @@ def ridge(w,xTr,yTr,lambdaa):
 # [d,n]=size(xTr);
 
     # YOUR CODE HERE
+    loss = np.dot(np.dot(w.T, xTr)-yTr, (np.dot(w.T, xTr)-yTr).T) + lambdaa*np.dot(w.T, w)
+    gradient = 2*np.dot(np.dot(xTr, xTr.T), w) - 2*np.dot(xTr, yTr.T) + 2*lambdaa*w
 
-    return loss,gradient
+    return loss, gradient

@@ -35,7 +35,7 @@ def spamfilter(xTe,yTe,w_trained,thresh=0.3):
             truth=yTe[:,i]
              
 #             % Do prediction here:
-            rawpred=linearmodel(w_trained,email)
+            rawpred=linearmodel(w_trained, email)
 
             if(rawpred>thresh):
                 pred=1;
